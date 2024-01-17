@@ -26,3 +26,7 @@ Além disso, os métodos set_width e set_height na classe Square devem definir a
 
 ![image](https://github.com/AlexandrePMiranda/PolygonAreaCalculator/assets/135765440/77f63203-809d-4b5e-b8b4-0277a9111a67)
 
+
+
+Para utilizar PolygonAreaCalculator, é só copiar o código em um compilador python, e fzr um código de utilização do app de acordo com as instruções acima.
+
