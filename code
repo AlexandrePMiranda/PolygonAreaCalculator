@@ -1,0 +1,69 @@
+class Rectangle:
+
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def set_width(self, width):
+        self.width = width
+
+    def set_height(self, height):
+        self.height = height
+
+    def get_area(self):
+        self.area = self.height * self.width
+        return self.area
+
+    def get_perimeter(self):
+        self.perimeter = 2*self.height + 2*self.width
+        return self.perimeter
+
+    def get_picture(self):
+        if self.height > 50 or self.width > 50:
+            return 'Too big for picture'
+        else:
+            line = '*'* self.width
+            pic = list()
+            for i in range(self.height):
+                pic.append(line)
+            return '\n'.join(pic)
+
+    def get_amount_inside(self, rect):
+        width2 = rect.width
+        height2 = rect.height
+        div_width = self.width//width2
+        div_height = self.height//height2
+
+        return div_height*div_width
+
+    def get_diagonal(self):
+        return ((self.width ** 2 + self.height ** 2) ** 0.5)
+
+    def __repr__(self):
+        return f'Rectangle(width={self.width}, height={self.height})'
+
+class Square(Rectangle):
+
+    def __init__(self, side):
+        self.side = side
+        super().__init__(self.side, self.side)
+
+
+    def set_side(self, side):
+        self.side = side
+        self.width = self.side
+        self.height = self.side
+
+    def set_height(self, height):
+        super().set_height(height)
+        self.side = self.height
+        self.width = self.side
+
+    def set_width(self, width):
+        super().set_width(width)
+        self.side = self.width
+        self.height =self.side
+
+
+    def __repr__(self):
+        return f'Square(side={self.side})'
